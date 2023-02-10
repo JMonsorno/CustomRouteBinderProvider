@@ -21,12 +21,12 @@ namespace CustomRouteBinderProviderLibrary
             if (context.Metadata is not DefaultModelMetadata metadata) { return null; }
             var paramaterAttributes = metadata.Attributes.ParameterAttributes;
 
-            if (metadata.Attributes.ParameterAttributes.Any(pa => pa.GetType() == typeof(FromRouteUnsafe)))
+            if (metadata.Attributes.ParameterAttributes.Any(pa => pa.GetType() == typeof(FromRouteUnsafeAttribute)))
             {
                 return new BinderTypeModelBinder(typeof(RouteUnsafeBinder));
             }
 
-            if (metadata.Attributes.ParameterAttributes.Any(pa => pa.GetType() == typeof(FromRouteRaw)))
+            if (metadata.Attributes.ParameterAttributes.Any(pa => pa.GetType() == typeof(FromRouteRawAttribute)))
             {
                 return new BinderTypeModelBinder(typeof(RouteRawBinder));
             }
