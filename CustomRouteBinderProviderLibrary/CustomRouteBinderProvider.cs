@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 namespace CustomRouteBinderProviderLibrary
 {
     [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false)]
-    public class FromRouteUnsafe : Attribute { }
+    public class FromRouteUnsafeAttribute : Attribute { }
 
     [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false)]
-    public class FromRouteRaw : Attribute { }
+    public class FromRouteRawAttribute : Attribute { }
 
     public class CustomRouteBinderProvider : IModelBinderProvider
     {
